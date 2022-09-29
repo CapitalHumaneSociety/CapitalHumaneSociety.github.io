@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> CHS Lost and Found Map</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin=""/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="leaflet-sidebar.css">
+        <link rel="stylesheet" href="MarkerCluster.css">
+        <link rel="stylesheet" href="MarkerCluster.Default.css">
+        
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                display: block;
+            }
+
+            html {
+                height: 100%;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+            html, body, #map {
+                height: 100%;
+                width: 100%;
+            }
+            #sidebar-content, #sidebar-title {
+                word-break: break-word;
+                margin-right: 40px;
+                font-size: 1.3em;
+            }
+            .navbar {
+                overflow: hidden;
+                background-color: #00416b;
+            }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+            }
+
+            .navbar a.right {
+                float: right;
+            }
+
+            .navbar a:hover {
+                background-color: rgb(94, 106, 139);
+                color: black;
+            }
+
+            *, *:before, *:after {
+                -webkit-box-sizing: inherit;
+                -moz-box-sizing: inherit;
+                box-sizing: inherit;
+            }   
+
+            .row {
+                height: 100%; 
+                display: flex;
+                flex-wrap: wrap; 
+            }
+
+            .side {
+                height: 100%;
+                flex: 20%;
+                background-color: #EE907B;
+                padding: 20px;
+                overflow: auto;
+            }
+
+            .main { 
+                height: 100%;  
+                flex: 80%;
+                background-color: white;
+                padding: 0;
+            }
+
+            .lCatGroup {
+                color: #CB8427;
+                border-radius: 50%;
+                display: inline-block;
+            }
+
+            @media screen and (max-width: 700px){
+                .row {
+                    flex-direction: column;
+                }
+            }
+
+            @media screen and (max-width: 400px){
+                .navbar a {
+                    float: none;
+                    width: 100%;
+                }
+            } 
+        </style>
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="https://www.capitalhumanesociety.org">Home</a>
+            <a href="https://www.capitalhumanesociety.org/services-resources/file-lost-pet-report.html">File Lost Report</a>
+            <a href="https://www.capitalhumanesociety.org/services-resources/file-found-pet-report.html">File Found Report</a>
+            <a href="https://www.lincoln.ne.gov/City/Departments/Health-Department/Animal-Control">Lincoln Animal Control</a>
+        </nav>
+
+        <!-- Map & Instructions -->
+        <div class="row">
+            <div class="side"><img src="CHSLogo.PNG">Welcome to the CHS lost and found pet map! <br><br>The animals displayed have been reported lost or found to Capital Humane Society, and information about them can be viewed by clicking on the pins on the map. <br><br>If you have found or lost a pet that has not yet been reported to us, please follow the links above to file a report with us and we will add them to the map as soon as possible. <br><br> All pets are shown by default, but there is a control to the left side of the map that will allow you to filter the shown pets. <br>For example, if you are missing a dog - you can choose to only display found dogs by deselecting all other options. <br><br>It is a good idea to submit a lost or found report with Lincoln Animal Control as well, though reports submitted with them will not appear on this page. A link to their website is provided above. <br><br>You are also welcome to walk through our Admissions and Assessments Center if you do not see your lost pet here! We are located at 2320 Park Boulevard, Lincoln NE 68502 <br><br>We are open from 10:30 AM to 6:00 PM Monday-Friday and 12:00 PM to 4:00 PM on Saturday and Sunday. <br><br>If you have any questions, please give us a call at (402)441-4488 extension 2.  </div>
+            <div class="main">
+                <div id="map"></div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+        <script src="main.js"></script>
+        <script src="leaflet-sidebar.js"></script>
+        <script src="papaparse.min.js"></script>
+        <script src="leaflet.markercluster.js"></script>
+        <script src="leaflet.featuregroup.subgroup.js"></script>
+        <script src="leaflet.awesome-markers.min.js"></script>
+    </body>
+</html>
