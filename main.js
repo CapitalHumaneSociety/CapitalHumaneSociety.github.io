@@ -43,6 +43,7 @@ function init() {
     Papa.parse(URL, {
         download: true,
         header: true,
+        skipEmptyLines: true,
         complete: addPoints,
     });
 }
@@ -103,6 +104,7 @@ function addPoints(data) {
                     photo: data[row].photo,
                     owner: data[row].owner,
                     phone: data[row].phone,
+                    address: data[row].address,
                 },
             };
 
@@ -113,7 +115,7 @@ function addPoints(data) {
                     document.getElementById("sidebar-title").innerHTML = 
                     e.target.feature.properties.name;
                     document.getElementById("sidebar-content").innerHTML = 
-                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you have found a cat matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
+                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Address: " + e.target.feature.properties.address + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you have found a cat matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
                     sidebar.open(panelID);
                 },
                 keydown: function (e) {
@@ -121,7 +123,7 @@ function addPoints(data) {
                     document.getElementById("sidebar-title").innerHTML = 
                     e.target.feature.properties.name;
                     document.getElementById("sidebar-content").innerHTML = 
-                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you have found a cat matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
+                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Address: " + e.target.feature.properties.address + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you have found a cat matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
                     sidebar.open(panelID);
                 },
             });
@@ -147,6 +149,7 @@ function addPoints(data) {
                     photo: data[row].photo,
                     owner: data[row].owner,
                     phone: data[row].phone,
+                    address: data[row].address,
                 },
             };
             marker.on({
@@ -155,7 +158,7 @@ function addPoints(data) {
                     document.getElementById("sidebar-title").innerHTML = 
                     e.target.feature.properties.name;
                     document.getElementById("sidebar-content").innerHTML = 
-                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you have found a dog matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
+                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Address: " + e.target.feature.properties.address + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you have found a dog matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
                     sidebar.open(panelID);
                 },
                 keydown: function (e) {
@@ -163,7 +166,7 @@ function addPoints(data) {
                     document.getElementById("sidebar-title").innerHTML = 
                     e.target.feature.properties.name;
                     document.getElementById("sidebar-content").innerHTML = 
-                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you have found a dog matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
+                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Address: " + e.target.feature.properties.address + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you have found a dog matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
                     sidebar.open(panelID);
                 },
             });
@@ -188,6 +191,7 @@ function addPoints(data) {
                     photo: data[row].photo,
                     owner: data[row].owner,
                     phone: data[row].phone,
+                    address: data[row].address,
                 },
             };
             marker.on({
@@ -196,7 +200,7 @@ function addPoints(data) {
                     document.getElementById("sidebar-title").innerHTML = 
                     e.target.feature.properties.name;
                     document.getElementById("sidebar-content").innerHTML = 
-                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you are missing a cat matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
+                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Address: " + e.target.feature.properties.address + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you are missing a cat matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
                     sidebar.open(panelID);
                 },
                 keydown: function (e) {
@@ -204,7 +208,7 @@ function addPoints(data) {
                     document.getElementById("sidebar-title").innerHTML = 
                     e.target.feature.properties.name;
                     document.getElementById("sidebar-content").innerHTML = 
-                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you are missing a cat matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
+                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Address: " + e.target.feature.properties.address + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you are missing a cat matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
                     sidebar.open(panelID);
                 },
             });
@@ -229,6 +233,7 @@ function addPoints(data) {
                     photo: data[row].photo,
                     owner: data[row].owner,
                     phone: data[row].phone,
+                    address: data[row].address,
                 },
             };
             marker.on({
@@ -237,7 +242,7 @@ function addPoints(data) {
                     document.getElementById("sidebar-title").innerHTML = 
                     e.target.feature.properties.name;
                     document.getElementById("sidebar-content").innerHTML = 
-                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you are missing a dog matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
+                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Address: " + e.target.feature.properties.address + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you are missing a dog matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
                     sidebar.open(panelID);
                 },
                 keydown: function (e) {
@@ -245,7 +250,7 @@ function addPoints(data) {
                     document.getElementById("sidebar-title").innerHTML = 
                     e.target.feature.properties.name;
                     document.getElementById("sidebar-content").innerHTML = 
-                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you are missing a dog matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
+                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Address: " + e.target.feature.properties.address + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you are missing a dog matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
                     sidebar.open(panelID);
                 },
             });
@@ -270,6 +275,7 @@ function addPoints(data) {
                     photo: data[row].photo,
                     owner: data[row].owner,
                     phone: data[row].phone,
+                    address: data[row].address,
                 },
             };
             marker.on({
@@ -278,7 +284,7 @@ function addPoints(data) {
                     document.getElementById("sidebar-title").innerHTML = 
                     e.target.feature.properties.name;
                     document.getElementById("sidebar-content").innerHTML = 
-                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you have found a pet matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
+                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Address: " + e.target.feature.properties.address + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you have found a pet matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
                     sidebar.open(panelID);
                 },
                 keydown: function (e) {
@@ -286,7 +292,7 @@ function addPoints(data) {
                     document.getElementById("sidebar-title").innerHTML = 
                     e.target.feature.properties.name;
                     document.getElementById("sidebar-content").innerHTML = 
-                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you have found a pet matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
+                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Address: " + e.target.feature.properties.address + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you have found a pet matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
                     sidebar.open(panelID);
                 },
             });
@@ -311,6 +317,7 @@ function addPoints(data) {
                     photo: data[row].photo,
                     owner: data[row].owner,
                     phone: data[row].phone,
+                    address: data[row].address,
                 },
             };
             marker.on({
@@ -319,7 +326,7 @@ function addPoints(data) {
                     document.getElementById("sidebar-title").innerHTML = 
                     e.target.feature.properties.name;
                     document.getElementById("sidebar-content").innerHTML = 
-                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you are missing a pet matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
+                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Address: " + e.target.feature.properties.address + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you are missing a pet matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
                     sidebar.open(panelID);
                 },
                 keydown: function (e) {
@@ -327,7 +334,7 @@ function addPoints(data) {
                     document.getElementById("sidebar-title").innerHTML = 
                     e.target.feature.properties.name;
                     document.getElementById("sidebar-content").innerHTML = 
-                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you are missing a pet matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
+                    ("Breed: " + e.target.feature.properties.breed + "<br>Color: " + e.target.feature.properties.color + "<br>Age: " + e.target.feature.properties.age + "<br>Sex: " + e.target.feature.properties.sex + "<br>Address: " + e.target.feature.properties.address + "<br>Reported on: " + e.target.feature.properties.date + '<br> <br>If you are missing a pet matching this description, please contact: <br>' + e.target.feature.properties.owner + '<br>' + e.target.feature.properties.phone + '<br> <br>' + e.target.feature.properties.photo);
                     sidebar.open(panelID);
                 },
             });
