@@ -44,7 +44,7 @@ function init() {
         download: true,
         header: true,
         skipEmptyLines: true,
-        complete: addPoints,
+        chunk: addPoints,
     });
 }
 
